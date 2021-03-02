@@ -1,0 +1,52 @@
+<% provide(:title,"SignUp")%>
+
+<h1 align="center">Sign Up</h1>
+
+<div class="panel panel-default" style="margin-right:50px; margin-left:600px; width:400px">
+<div class="panel-body" style="margin-right:50px; margin-left:50px;">
+<div>
+<%=form_for(@user) do |f|%>
+<%@user.errors.objects.each do |e|%>
+<%= e.message%>
+<% end%>
+
+
+	<%= f.label :name%>
+	<br/>
+	<%= f.text_field :name%>
+	<br/>
+	<br/>
+	
+	<%= f.label :email%>
+	<br/>
+	<%= f.email_field :email%>
+	<br/>
+	<br/>
+    <%= f.label  :contact%>
+    <br/>
+    <%=f.text_field :contact%>
+    <br/>
+    <br/>
+
+	
+	<%= f.label :password %>
+	<br/>
+<%= f.password_field :password %>
+<br/>
+<br/>
+<%= f.label :password_confirmation, "Confirm Password" %>
+<br/>
+<%= f.password_field :password_confirmation %>
+<br/>
+<br/>
+<%= f.submit "Create my account", class: "btn btn-primary" %>
+
+<% end %>
+
+
+</div>
+
+</div>
+</div>
+</aside>
+</div>
